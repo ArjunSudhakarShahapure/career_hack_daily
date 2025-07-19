@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Manager - Career Hack Daily</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="profile-section">
+                    <div class="profile-pic">
+                        <div class="profile-logo">HACK</div>
+                        <div class="profile-text">DAILY</div>
+                    </div>
+                    <div class="profile-info">
+                        <h1 class="username">career_hack_daily</h1>
+                        <p class="full-name">करियर_हॅक_डेली</p>
+                        <div class="stats">
+                            <span><i class="fas fa-file-alt"></i> 7 Resources</span>
+                            <span><i class="fas fa-users"></i> 10 Followers</span>
+                            <span><i class="fas fa-heart"></i> 3 Following</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class="action-btn"><i class="fas fa-plus"></i></button>
+                    <button class="action-btn"><i class="fas fa-share"></i></button>
+                    <button class="action-btn"><i class="fas fa-ellipsis-h"></i></button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Bio Section -->
+        <section class="bio-section">
+            <div class="category">Education</div>
+            <div class="bio-content">
+                <ul class="bio-list">
+                    <li><i class="fas fa-bullseye"></i> Daily Career Hacks for Students & Freshers</li>
+                    <li><i class="fas fa-circle"></i> Open Source Material</li>
+                    <li><i class="fas fa-file-alt"></i> Resume Tips • Job Search Guides</li>
+                </ul>
+                <a href="#" class="resource-link">
+                    <i class="fas fa-link"></i> docs.google.com/document/d/1PbvfEJp4flqIGL...
+                </a>
+                <div class="profile-link">@career_hack_daily</div>
+            </div>
+        </section>
+
+        <!-- Professional Dashboard -->
+        <section class="dashboard-section">
+            <div class="dashboard-card">
+                <h3>Professional Dashboard</h3>
+                <p>336 views in the last 30 days</p>
+            </div>
+        </section>
+
+        <!-- Action Buttons -->
+        <section class="action-section">
+            <button class="btn btn-primary">Edit Profile</button>
+            <button class="btn btn-secondary">Share Profile</button>
+        </section>
+
+        <!-- Highlights/Categories -->
+        <section class="highlights-section">
+            <h3>Resource Categories</h3>
+            <div class="highlights-grid">
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <span>Trending News</span>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <span>Courses</span>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <span>Resume Templates</span>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <span>Material Guide</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resource Management -->
+        <section class="resources-section">
+            <div class="section-header">
+                <h3>Resources</h3>
+                <div class="filter-tabs">
+                    <button class="tab-btn active" data-filter="all">
+                        <i class="fas fa-th"></i>
+                    </button>
+                    <button class="tab-btn" data-filter="pdf">
+                        <i class="fas fa-file-pdf"></i>
+                    </button>
+                    <button class="tab-btn" data-filter="link">
+                        <i class="fas fa-link"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="resources-grid" id="resourcesGrid">
+                <!-- Resources will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <!-- Add Resource Modal -->
+        <div class="modal" id="addResourceModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Add New Resource</h3>
+                    <button class="close-btn" id="closeModal">&times;</button>
+                </div>
+                <form id="addResourceForm">
+                    <div class="form-group">
+                        <label for="resourceTitle">Title</label>
+                        <input type="text" id="resourceTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="resourceDescription">Description</label>
+                        <textarea id="resourceDescription" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="resourceType">Type</label>
+                        <select id="resourceType" required>
+                            <option value="link">Link</option>
+                            <option value="pdf">PDF</option>
+                            <option value="document">Document</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="resourceUrl">URL/File</label>
+                        <input type="url" id="resourceUrl" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="resourceCategory">Category</label>
+                        <select id="resourceCategory">
+                            <option value="trending">Trending News</option>
+                            <option value="courses">Courses</option>
+                            <option value="resume">Resume Templates</option>
+                            <option value="material">Material Guide</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" id="cancelAdd">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Add Resource</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <a href="#" class="nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-search"></i>
+                <span>Search</span>
+            </a>
+            <a href="#" class="nav-item" id="addResourceBtn">
+                <i class="fas fa-plus"></i>
+                <span>Add</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-play"></i>
+                <span>Reels</span>
+            </a>
+            <a href="#" class="nav-item">
+                <div class="profile-nav-pic">H</div>
+                <span>Profile</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
