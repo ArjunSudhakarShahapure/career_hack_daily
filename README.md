@@ -8,7 +8,7 @@ A mobile-friendly resource management website with a beautiful black and blue th
 - Fully responsive design optimized for mobile devices
 - Touch-friendly interface with smooth animations
 - Bottom navigation for easy access
-- Gesture support and mobile-specific optimizations
+- Gesture support and mobile-specific optimization
 
 ### 🎨 Beautiful UI/UX
 - Modern black and blue theme
